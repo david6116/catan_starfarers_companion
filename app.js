@@ -27,3 +27,8 @@ colonize('red', 'ore')
 colonize('red', 'goods')
 
 console.log(playersResources)
+
+
+
+//click handlers
+//one for game start that calls gameSetup()
