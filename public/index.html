@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS and JS BS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- app specific CSS and JS -->
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="main.css">
+
+    <title>Starfarers Companion</title>
+</head>
+<body>
+this is a test
+
+    <form>
+        <div class="form-group">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="blue" name="player" value="blue" checked>
+                <label class="form-check-label" for="blue">Blue</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="red" name="player" value="red">
+                <label class="form-check-label" for="red">Red</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="white" name="player" value="white">
+                <label class="form-check-label" for="white">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="yellow" name="player" value="yellow">
+                <label class="form-check-label" for="yellow">Yellow</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="blue-carbon" name="resource" value="blue-carbon" checked>
+                <label class="form-check-label" for="blue-carbon">Blue Carbon</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="green-food" name="resource" value="green-food">
+                <label class="form-check-label" for="green-food">Green Food</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="yellow-fuel" name="resource" value="yellow-fuel">
+                <label class="form-check-label" for="yellow-fuel">Yellow Fuel</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="purple-goods" name="resource" value="purple-goods">
+                <label class="form-check-label" for="purple-goods">Purple Goods</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="red-ore" name="player" value="red-ore">
+                <label class="form-check-label" for="red-ore">Red Ore</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="number" id="resource-number" name="resource-number" min="2" max="12">
+            <label for="resource-number">Resouce Number (between 2 and 12):</label>
+        </div>
+
+        <div class="button">
+            <input type="submit" id='colonize' value="Colonize">
+        </div>
+    </form>
+</body>
+</html>

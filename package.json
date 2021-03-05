@@ -1,0 +1,26 @@
+{
+  "name": "catan_starfarers_companion",
+  "version": "1.0.0",
+  "description": "Once complete, this app will be a companion app for playing Catan Starfarers(2019). It will help automate some of the recurring tasks like die rolling and the subsequent resource distribution.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david6116/catan_starfarers_companion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david6116/catan_starfarers_companion/issues"
+  },
+  "homepage": "https://github.com/david6116/catan_starfarers_companion#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "requirements": "^1.4.0"
+  }
+}
