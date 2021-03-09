@@ -18,7 +18,7 @@ const colonize = () => {
     const resource = document.querySelector('input[name="resource"]:checked').value
     console.log(resource)
     //get form data for what number that they will get the resource on
-    const number = parseInt(document.getElementById('resource-number').value)
+    const number = parseInt(document.getElementById('put-resource-number').value)
     console.log(typeof number)
 
     //finally, let's add to our resource dicts above
@@ -31,8 +31,11 @@ const colonize = () => {
 }
 
 // playerRoll = some player and number rolled
-const getSingleRollResources = (playerRoll) => {
-
+const getSingleRollResources = () => {
+    const player = document.querySelector('input[name="player"]:checked').value
+    console.log(player)
+    const number = parseInt(document.getElementById('get-resource-number').value)
+    console.log(playerData[player][number])
 
 
 }
@@ -51,14 +54,16 @@ document.addEventListener('click', function (event) {
 
     // If the clicked element doesn't have the right selector, bail
     if (event.target.matches('#colonize')) {
-        // Don't follow the link
         event.preventDefault();
-        // Log the clicked element in the console
         console.log(event.target);
         // run colonize function
         colonize()
         //log all player resources
         console.log(playerData)
+    } else if (event.target.matches('#resources')) {
+        event.preventDefault();
+        console.log(event.target);
+        getSingleRollResources()
     }
 
 }, false);

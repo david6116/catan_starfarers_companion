@@ -58,12 +58,28 @@ this is a test
         </div>
 
         <div class="form-group">
-            <input type="number" id="resource-number" name="resource-number" min="2" max="12">
-            <label for="resource-number">Resouce Number (between 2 and 12):</label>
+            <input type="number" id="put-resource-number" name="put-resource-number" min="2" max="12">
+            <label for="put-resource-number">Resource Number (between 2 and 12):</label>
         </div>
 
         <div class="button">
             <input type="submit" id='colonize' value="Colonize">
+        </div>
+    </form>
+    <form>
+        <div class="form-group">
+            <input type="number" id="get-resource-number" name="get-resource-number" min="2" max="12">
+            <label for="get-resource-number">Resource Number (between 2 and 12):</label>
+        </div>
+        <div id="individual-resources">
+            <div class="form-group">
+                <div class="button">
+                    <input type="submit" id="resources" value="Resources">
+                </div>
+            </div>
+            <div id="individual-resource-list">
+
+            </div>
         </div>
     </form>
 </body>
