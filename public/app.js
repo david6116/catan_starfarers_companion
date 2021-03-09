@@ -31,11 +31,24 @@ const colonize = () => {
 }
 
 // playerRoll = some player and number rolled
-const getSingleRollResources = () => {
-    const player = document.querySelector('input[name="player"]:checked').value
-    console.log(player)
+const getRolledResources = () => {
+    //let's store the number selected as number
     const number = parseInt(document.getElementById('get-resource-number').value)
-    console.log(playerData[player][number])
+
+    //Create #individual-resource-list as a var so we can easily add content
+    let rolledResourceList = document.getElementById('rolled-resource-list')
+    //let's always make sure to remove any previous results from the dom before displaying new requested info
+    rolledResourceList.removeChild(rolledResourceList.firstChild)
+
+    //now, let's build and append the content to display
+    const resourceListDiv = document.createElement('div')
+    for (const eachPlayer in playerData){
+        if (playerData[eachPlayer][number]) {
+            const resourceList = document.createTextNode(`${number} - ${eachPlayer}: ` + playerData[eachPlayer][number])
+            resourceListDiv.appendChild(resourceList)
+            rolledResourceList.append(resourceListDiv)
+        }
+    }
 
 
 }
@@ -63,7 +76,7 @@ document.addEventListener('click', function (event) {
     } else if (event.target.matches('#resources')) {
         event.preventDefault();
         console.log(event.target);
-        getSingleRollResources()
+        getRolledResources()
     }
 
 }, false);
