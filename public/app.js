@@ -27,7 +27,7 @@ const colonize = () => {
     } else{
         playerData[player][number] = [resource]
     }
-
+    getAllResources()
 }
 
 // playerRoll = some player and number rolled
@@ -36,7 +36,7 @@ const getRolledResources = () => {
     const number = parseInt(document.getElementById('get-resource-number').value)
 
     //Create #individual-resource-list as a var so we can easily add content
-    let rolledResourceList = document.getElementById('rolled-resource-list')
+    const rolledResourceList = document.getElementById('rolled-resource-list')
     //let's always make sure to remove any previous results from the dom before displaying new requested info
     rolledResourceList.removeChild(rolledResourceList.firstChild)
 
@@ -49,17 +49,34 @@ const getRolledResources = () => {
             rolledResourceList.append(resourceListDiv)
         }
     }
-
-
 }
 
-// playerResources = whatever player wants to see a list of all their resources
-const getAllResouces = () => {
+// keeps the page up to date on resources and colonies
+const getAllResources = () => {
+    //everytime this is called, let's make sure our table is clear of data
+    const dataRows = document.querySelectorAll('.data-rows')
+    dataRows.forEach(e => e.parentNode.removeChild(e));
 
-    //res.render{url,
-    //{some anon dict}
 
+    const allResourcesChart = document.getElementById('all-resources')
+    for (const eachPlayer in playerData){
+        const newRow = document.createElement("div")
+        newRow.className = 'row data-rows'
+        const newPlayerDiv = document.createElement('div')
+        newPlayerDiv.className = 'col'
+        const newPlayer = document.createTextNode(eachPlayer)
+        newPlayerDiv.appendChild(newPlayer)
+        newRow.appendChild(newPlayerDiv)
 
+        for (let i = 2; i < 13; i++) {
+            const newCol = document.createElement('div')
+            newCol.className = 'col'
+            const newColData = document.createTextNode(`${playerData[eachPlayer][i]}`)
+            newCol.appendChild(newColData)
+            newRow.appendChild(newCol)
+        }
+        allResourcesChart.appendChild(newRow)
+    }
 }
 
 
@@ -72,7 +89,6 @@ document.addEventListener('click', function (event) {
         // run colonize function
         colonize()
         //log all player resources
-        console.log(playerData)
     } else if (event.target.matches('#resources')) {
         event.preventDefault();
         console.log(event.target);
